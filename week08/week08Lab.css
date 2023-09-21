@@ -19,13 +19,17 @@ Objectives:
 * Use browser developer tools to inspect and debug their CSS.
 -----------------------------------------------------
 
-Instructions: The HTML file is complete and images have been provided. The CSS file is missing many properties but all necessary ELEMENTS, ID, and CLASS SELECTORS are already provided. Use the HTML file to find the element's ID or CLASS to be used as a selector in the CSS file to add the properties in the correct place. The CSS file is already linked to the HTML file.
+Instructions: The HTML file is complete and images have been provided. The CSS file is missing many properties but all necessary ELEMENTS, ID,
+ and CLASS SELECTORS are already provided. 
+Use the HTML file to find the element's ID or CLASS to be used as a selector in the CSS file to add the properties in the correct place. 
+The CSS file is already linked to the HTML file.
 
 -----------------------------------------------------
 
 PART 1: Using the ELEMENT Selector:
 * Step 1: Target the html BODY element and give it a top and bottom margin of 1rem and a left and right margin of 5rem.
-* Step 2: Target the page title and give it a filter of drop-shadow with x offset of 2 pixels, y offset of 2 pixels, blur of 1 pixel and hex color code of #0f6a9e.(See documentation https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+* Step 2: Target the page title and give it a filter of drop-shadow with x offset of 2 pixels, y offset of 2 pixels, 
+  blur of 1 pixel and hex color code of #0f6a9e.(See documentation https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 * Step 3: Target all of the paragraphs and lists on the page to give it a font size of 20 pixels. 
 * Step 4: Target all of the image elements, assign the following:
         * margin (top, right, bottom, and left) of 1 rem
@@ -45,6 +49,19 @@ PART 2: Using ID or CLASS Selectors:
 * Step 6: The DIV that houses the "Top 5 Places to Visit..." has a child element that is an image. Using flex, center the image in the div.
 * Step 7: The DIV that houses the "Tips and Reccs" appears to be squished when the screen size is less than 1100 pixels. Add to the appropriate MEDIA QUERY a property that will allow the div to wrap down and then justify the contents to the center. Start by taking a look at the CSS for that DIV outside of the MEDIA QUERY to understand how the DIV is behaving.
 
+UPDATES ON INSTRUCTIONS: 
+Step 3: The caption for the top banner image is not under the image like it should be. Add a property to make the caption wrap under the image using flex.
+* Step 4: In the DIV that has the 4 images, justify the content by putting space around each image.
+* Step 5: Give the DIV that houses the "Top 5 Places to Visit..." a background color of rgb(0, 58, 66) and a border radius of 1 rem.
+* Step 6: The DIV that houses the "Top 5 Places to Visit..." has a child element that is an image. Using flex, center the image in the div.
+* Step 7: The DIV that houses the "Tips and Reccs" appears to be squished when the screen size is less than 1100 pixels. 
+    Add to the appropriate MEDIA QUERY a property that will allow the div to wrap down and then justify the contents to the center. 
+    Start by taking a look at the CSS for that DIV outside of the MEDIA QUERY to understand how the DIV is behaving.
+* Step 6: The DIV that houses the "Tips and Reccs" appears to be squished when the screen size is less than 1100 pixels. 
+    Add to the appropriate MEDIA QUERY a property that will allow the div to wrap down and then justify the contents to the center. 
+    Start by taking a look at the CSS for that DIV outside of the MEDIA QUERY to understand how the DIV is behaving.
+
+
 -----------------------------------------------------
 
 */
@@ -58,10 +75,10 @@ of the elements on the page can help fix issues with spacing too, especially if 
 
 /* ---UNIVERSAL SELECTOR--- */
 /* OPTIONAL ↓ REMOVE COMMENTS TO SEE RED BORDER:*/
-
+/* 
 * {
   border: 1px solid red;
-}
+} */
 
 /* ---ELEMENT SELECTORS--- */
 
@@ -70,17 +87,19 @@ html {
   background: linear-gradient(180deg, #84daf5, #89ffff, #affffa, #ffffff);
 }
 body {
+    margin:1rem 5rem;
 }
 
 h1 {
   text-align: center;
+  filter: drop-shadow(2px 2px 1px #0f6a9e);
 }
 h2 {
   margin: 4rem auto 1rem auto;
   text-align: center;
 }
-p,
-li {
+p,li {
+  font-size: 20px;
 }
 ol {
   padding: 20px;
@@ -90,6 +109,9 @@ ol li {
   padding: 10px 0;
 }
 img {
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px 1px rgb(0,0,0,.5);
 }
 figcaption {
   text-align: center;
