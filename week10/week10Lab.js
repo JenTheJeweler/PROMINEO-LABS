@@ -26,8 +26,8 @@
 /* ----------------------------------------------------- */
 
 /*------------------------ Creating a website with only JS ------------------------*/
-console.log(`-------------------------- 
-Part 1: Create a form with only JavaScript`)
+console.log('Part 1: Create a form with only JavaScript') 
+
 
 /** 
  *
@@ -44,15 +44,42 @@ Part 1: Create a form with only JavaScript`)
 
 // console.log(myForm)
 //Question: Besides changing the innerHTML, what other HTML things can we change using JavaScript?
-//Answer:
+//Answer: class, id css, styles, values, properties. Anything that you can so with html
 
 /*------------------------ Styling a form with only JavaScript------------------------*/
-console.log(`-------------------------- 
-Part 2: Styling our form with only JavaScript`)
+let myForm = document.createElement('form')
+let myNameLabel = document.createElement('Label')
+let myNameInput = document.createElement('input')
+
+myNameLabel.innerHTML = 'Name'
+
+myForm.append(myNameLabel)
+myForm.append(myNameInput)
+
+document.body.append(myForm)
+
+let myEmailLabel = document.createElement('label')
+let myEmailInput = document.createElement('input')
+
+myEmailLabel.innerHTML = 'Email'
+
+mySubmitButton = document.createElement('button')
+
+mySubmitButton.innerHTML = 'Submit'
+
+myForm.append(myEmailLabel)
+myForm.append(myEmailInput)
+myForm.append(mySubmitButton)
+
+
+console.log(myForm)
+
+
+console.log('Part 2: Styling our form with only JavaScript')
 
 /**
  *  Hint: element.style.cssProperty = ''
- *
+ *    myForm.style.backgroundColor = 'blue'
  *  Step 1: Change the background color of your form to your favorite color.
  *         (you can use an accepted string, hex (ex: #DBF9FC) or rgb, (ex: rgb(255,122,89)))
  *  Step 2: Change the font color so it's readable over your background color
@@ -60,12 +87,22 @@ Part 2: Styling our form with only JavaScript`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+myForm.style.backgroundColor = 'teal'
+myForm.style.color = 'white'
+myForm.style.display = 'flex'
+myForm.style.flexDirection = 'column'
+myForm.style.maxWidth = '250px'
+
+console.log(myForm)
+
 //Question: Do you prefer styling with JavaScript or CSS?
-//Answer:
+//Answer: CSS.
 
 /*------------------------ Creating a table with only JavaScript ------------------------*/
-console.log(`-------------------------- 
-Part 3: Creating a table with only JavaScript`)
+
+
+
+console.log('Part 3: Creating a table with only JavaScript')
 
 /*
  * Note: Most of these steps are similar to Part 1.
@@ -83,11 +120,28 @@ Part 3: Creating a table with only JavaScript`)
 // console.log(myTable)
 //Question: While this is clearly a more round-about way of making a table, how can using JavaScript in this way
 //          more beneficial than HTML?
-//Answer:
+//Answer: different options available for adding things. event listeners, 
+//button submissions etc to add things inside the js file, instead of having to go back and forth to the html file. 
 
 /*------------------------ Changing our body background on click ------------------------*/
-console.log(`-------------------------- 
-Part 4: Changing our background on click`)
+
+let myTable = document.createElement('table')
+let myTr = document.createElement('tr')
+let myTdName = document.createElement('td')
+let myTdEmail = document.createElement('td')
+
+myTdName.innerHTML = 'Name'
+myTdEmail.innerHTML = 'Email'
+myTable.append(myTr)
+myTr.append(myTdName)
+myTr.append(myTdEmail)
+
+document.body.append(myTable)
+
+myTable.style.border = '3px double black'
+
+console.log(myTable)
+console.log('Part 4: Changing our background on click')
 /**
  * Documentation: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
  *
@@ -104,11 +158,16 @@ Part 4: Changing our background on click`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
-//Question: What other event listeners are there?
+//Question: What other event listeners are there? mouse up/down, mouse over, move, scroll etc etfc.
 //             Try them out by replacing 'click' in your function above!
 //Answer:
 
-console.log(`-----------Finished------------`)
+
+const myButton = document.getElementById('myButton').addEventListener('click', () => {
+   document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+})
+
+console.log('-----------Finished------------')
 
 /**
  * Extra Project Ideas:
