@@ -75,6 +75,7 @@ Part 1: Setup your JSON server`)
  * Step 3: Below, create a const declaration for your URL endpoint
  *
  * ↓ YOUR CODE HERE ↓ */
+const URL_ENDPOINT = 'http://localhost:3000/studentRoster'
 
 /*------------------------ Part 2: HTTP Verb: GET ------------------------*/
 console.log(
@@ -91,11 +92,27 @@ Part 2: GET and displaying the information`
  *         Reminder: While you are not required to, the lab solution uses a <table>
  *
  * ↓ YOUR CODE HERE ↓ */
+$.get(URL_ENDPOINT).then(data => {
+data.map(student => {
+$('tbody').append(
+  $(`
+  <tr>
+    <td> ${student.id}</td>
+    <td> ${student.fullName}<td/>
+    <td> ${student.researchAssignment}<td/>
+    <button onclick="deleteUser(${student.id})">🗑</Button>
+    </td>
+  <tr>
+  `)
+)
+})
+}
+)
 
 /*------------------------ Part 3: HTTP Verb: POST ------------------------*/
 console.log(
   `-------------------------- 
-Part 3: POST and adding new students`
+Part 3: POST/PATCH and adding new students`
 )
 
 /**
@@ -116,7 +133,12 @@ Part 3: POST and adding new students`
  *         Your button should now post a new user on click.
  *
  * ↓ YOUR CODE HERE ↓ */
-
+$(`#submitStudent`).click(function () {
+  $.post(URL_ENDPOINT,{
+    fullName: $('#fullName').val(),
+    researchAssignment:$('#newAssignment').val(),
+  })
+})
 /*------------------------ Part 4: HTTP Verb: DELETE ------------------------*/
 console.log(
   `-------------------------- 
@@ -149,6 +171,12 @@ Part 4: DELETE and deleting individual students`
  *         Your elements should now be getting deleted!
  *
  * ↓ YOUR CODE HERE ↓ */
+function deleteUser (id) {
+
+  $.ajax(`${URL_ENDPOINT}/${id}`, {
+    type:'DELETE'
+  })
+}
 
 /*------------------------ HTTP Verb: UPDATE ------------------------*/
 console.log(
@@ -173,6 +201,18 @@ Part 4: PUT and updating the information`
  *         do the updateUser function on click.
  *
  * ↓ YOUR CODE HERE ↓ */
+function updateUser() {
+  let id = $("#updateId").val()
+
+  $.ajax(`${URL_ENDPOINT}/${id}`, {
+    method: 'PUT',
+    data: {
+      fullName: $("#updateName").val(),
+      researchAssignment: $("#updateAssignment").val(),
+    }
+  })
+}
+$('#updateStudent').click(updateUser)
 
 console.log(`-----------Finished------------`)
 
