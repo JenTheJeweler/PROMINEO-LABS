@@ -1,0 +1,44 @@
+.navBar {
+    width: 100vw;
+    background-color: rgb(98, 107, 202);
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+}
+/* makes the nav bar spread the entire page,
+makes it purple, with white text, 24px font and 5 px padding */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+/* makes nav bar dynamic to different screen sizes, 
+puts it in a horizontal row, and to the right of the screen*/
+nav ul li {
+    list-style-type: none;
+    margin-right: 1em;
+} 
+/* makes spaces in between the unnumbered list item, so they're not all together */
+
+nav ul li:hover {
+    color: rgba(0, 0, 0, 0.705)
+} 
+/* makes the text of the nav items turn black when you hover them */
+ 
+nav ul li:active {
+    background-color: green; 
+}
+/* makes the background around the word green when you click on it,
+other options inlude box shadow, blur, etc,
+ "pseudo-selectors"- lots of options for a cool nav bar experience!  */
+
+ /* Welcome Section */
+ .welcomeSection {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #EEEEEE;
+    padding: 1em;
+    
+
+ }

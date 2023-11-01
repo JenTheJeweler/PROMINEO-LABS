@@ -72,9 +72,19 @@
 
 /* -- ALL YOUR COMPONENT/STYLE IMPORTS HERE -- */
 import './App.css'
+import Nav from './Nav' // importing the Nav component (navigation variable) dot forward slash ./ ==" inside of this directory"
+import Section from './Section'
+// ***CLASSES NEED TO BE CAPITALIZED!
 
+//functional component:
 function App() {
-  return <div className="App"></div>
+  return(
+   <div className="App">
+    <Nav></Nav>
+    {/* //  Below your <Nav/> component, create a <section> element to hold our Welcome section */}
+    <Section/>
+  </div>
+  )
 }
 
 export default App
