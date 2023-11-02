@@ -38,3 +38,27 @@
   background-color: #eeeeee;
   padding: 1em;
 }
+
+/* Table Section */
+
+ table {
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  border:  5px solid blueviolet;
+  box-shadow: 2px 2px 5px 0px #000000;
+ 
+}
+td {
+  font-style: italic;
+  font-size: large;
+  padding: 10px;
+  text-shadow: #000000;
+
+}
+
+th {
+  font-size: 25px;
+  padding: 10px;
+  text-shadow: 2px 2px 3px #eeeeee;
+}
